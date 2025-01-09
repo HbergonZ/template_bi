@@ -1,0 +1,18 @@
+
+# Definindo elementos
+card1.add_card(titulo=card1_valor['quantidade_registros'].sum(), descricao="Registros hoje - Sentinela")
+card2.add_card(titulo=card2_valor['quantidade_registros'].sum(), descricao="Registros totais (Janeiro/2024 - Agosto/2024) - Sentinela")
+card3.add_card(titulo=card3_valor['total_deteccoes'].values[0], descricao="Detecções totais - Sentinela")
+card4.add_card(titulo=f'{media_persistencia_formatada}', descricao="Persistência média em dias - Sentinela")
+card5.add_card(titulo=f'{media_severidade_formatada}', descricao="Índice de severidade médio - Sentinela")
+card6.add_card(titulo=card6_valor['total_area'].values[0], descricao="Área total afetada (km²) - Sentinela")
+grafico1.add_grafico_barra(title="Quantidade de queimadas por tipo de área", data_frame=grafico1_table, orientation= "h", y='tipo_de_area', x='contagem', text_auto=True)
+grafico2.add_grafico_barra(title="Percentual de queimadas por status", data_frame=grafico2_table, orientation= "h", y='status', x='percentual', text_auto=True, text='Total', labels={'status': 'Status', 'percentual': 'Percentual', 'Total': 'Total'}, exibir_eixo_x=False, texttemplate='%{x:.2f}%')
+grafico3.add_grafico_linha(title="Índice de severidade ao longo do ano", data_frame=grafico3_table, y='Índice de Severidade Máximo', x='Data')
+grafico4.add_grafico_pizza(sm=4, title="Recorrência dos registros", data_frame=grafico4_table, values='total', names='recorrente', width=200)
+grafico5.add_grafico_barra(sm=8, title="Variação do número de eventos ao longo do ano", data_frame=grafico5_table, y='quantidade_eventos', x='data')
+grafico6.add_tabela(sm=12, data_frame=grafico6_table, title="Registros de queimadas")
+grafico7.add_grafico_linha(sm=12, title="Variação da soma áreas afetadas ao longo do ano", data_frame=grafico7_table, y='soma_area', x='data')
+grafico8.add_grafico_linha(sm=6, markers=True, title="Número máximo de partículas pm2.5 por dia em Porto Velho", data_frame=grafico8_table, y='pm25', x='data', text="pm25")
+imagem1.add_imagem()
+mapa1.add_mapa()

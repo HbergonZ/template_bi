@@ -1,0 +1,32 @@
+include:
+  - project: ci-cd/templates
+    ref: production
+    file:
+      - deploy.okd.yml
+      - variables.yml
+
+stages:
+  - deploy
+
+variables:
+  PROJECT_NAME: "painel-sentinela-e-equalidade-do-ar"
+  PROJECT_DISPLAY_NAME: "Painel Sentinela e Qualidade do Ar"
+
+  DOCKERFILE_PATH: "Dockerfile"
+  DOCKERFILE_CONTEXT: "/"
+
+  ROUTER_PORT: "5000"
+  ROUTER_PATH: "/"
+  ROUTER_TERMINATION: "edge"
+
+  ROUTER_HOSTNAME_DEVELOPMENT: ""
+
+  ROUTER_HOSTNAME_STAGING: >
+    ""
+
+  ROUTER_HOSTNAME_PRODUCTION: >
+    ""
+
+  DEPLOY_ENVIRONMENT: >
+    "TZ=America/Porto_Velho"
+
